@@ -12,12 +12,6 @@ modelo = tf.keras.models.load_model("keras_model.h5")
 with open("labels.txt", "r") as f:
     etiquetas = [line.strip().split(" ", 1)[1] for line in f.readlines()]
 
-
-@app.route("/")
-def inicio():
-    return "Servidor Beauty AI funcionando"
-
-
 @app.route("/analizar", methods=["POST"])
 def analizar():
 
