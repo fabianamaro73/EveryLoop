@@ -23,7 +23,9 @@ def analizar():
 
     # Verificar que se haya recibido una imagen
     if len(request.files) == 0:
-        return jsonify({ "error": "No se recibió ninguna imagen"}), 400
+        return jsonify({
+            "error": "No se recibió ninguna imagen"
+        }), 400
 
     # Obtener la imagen enviada
     imagen_archivo = list(request.files.values())[0]
